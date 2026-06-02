@@ -1,0 +1,219 @@
+You are building a daily UI project. Below is the theme specification for today.
+
+## Theme Context (daily-context.json)
+```json
+{
+  "day": 15,
+  "date": "2026-05-30",
+  "version": "1.15.0",
+  "project_name": "x-template-015",
+  "theme": {
+    "name": "Shadow Glow",
+    "style": "Modern, Dark, Luminous",
+    "mood": "sleek, mysterious, sophisticated, calm"
+  },
+  "palette": {
+    "background": "#1A1A1A",
+    "surface": "#282828",
+    "primary": "#6C4FBB",
+    "accent": "#00D0FF",
+    "text": "#E0E0E0",
+    "muted": "#888888"
+  },
+  "typography": {
+    "heading": "Poppins",
+    "body": "Inter",
+    "size": "medium"
+  },
+  "layout": {
+    "structure": "asymmetric",
+    "density": "normal",
+    "border_style": "Soft rounded borders with subtle inner shadow"
+  },
+  "animation": {
+    "level": "moderate",
+    "style": "Smooth fades and subtle hover glows"
+  },
+  "components": {
+    "hero_text": "FUTURE VISION",
+    "subtitle": "Experience clarity in the dark.",
+    "button_label": "Explore Insights",
+    "badge_text": "New Release"
+  },
+  "commit_message": "feat: UI Day 15 — Shadow Glow",
+  "source": "gemini-key1",
+  "selected_component": {
+    "category": "Toggle-switches",
+    "component": "elijahgummer_shy-fireant-5.html",
+    "path": "C:\\Users\\User\\Documents\\GitHub\\Axon\\x-components\\Toggle-switches\\elijahgummer_shy-fireant-5.html",
+    "content": "<a href=\"#\" class=\"square\">\n  <div class=\"burgerwrap\">\n    <span></span>\n    <span></span>\n    <span></span>\n  </div>\n</a>\n\n<style>\n/* Tags: simple, gradient, switch, glow, modern, hover effect */\n.square {\n  border: 1px solid #5e42a6;\n  height: 26px;\n  width: 26px;\n  display: block;\n  margin: 40px auto;\n  transform: rotate(45deg);\n  overflow: hidden;\n  cursor: pointer;\n  -webkit-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);\n  -moz-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);\n  -o-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);\n  transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);\n  /* custom */\n}\n\n.square .burgerwrap {\n  height: 18px;\n  width: 21px;\n  transform: rotate(-45deg);\n  padding-left: 2px;\n  padding-top: 8px;\n  -webkit-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);\n  -moz-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);\n  -o-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);\n  transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);\n  /* custom */\n}\n\n.square:hover {\n  transform: rotate(135deg);\n  border: 1px solid #fff;\n  box-shadow: 0 0 2px rgba(255, 255, 255, 0.5), 0 0 5px rgba(255, 255, 255, 0.5),\n    0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.5),\n    0 0 40px rgba(255, 255, 255, 0.5), 0 0 50px rgba(255, 255, 255, 0.5),\n    0 0 60px rgba(255, 255, 255, 0.5);\n}\n\n.square:hover .burgerwrap {\n  transform: rotate(-135deg);\n}\n\n.square span {\n  height: 2px;\n  width: 14px;\n  background: linear-gradient(145deg, #5e42a6, #b46be4);\n  display: block;\n  margin-bottom: 2px;\n  -webkit-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);\n  -moz-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);\n  -o-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);\n  transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);\n  /* custom */\n}\n\n.square span:after {\n  content: \"\";\n  height: 2px;\n  width: 14px;\n  position: absolute;\n  background: #fff;\n  left: -22px;\n  margin-top: -4px;\n  -webkit-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);\n  -moz-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);\n  -o-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);\n  transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);\n  /* custom */\n}\n\n.square:hover span {\n  margin-left: 26px;\n}\n\n.square:hover span:after {\n  left: 0.2px;\n}\n\n.square span:nth-of-type(1),\n.square span:nth-of-type(1):after {\n  transition-delay: 0.1s;\n}\n\n.square span:nth-of-type(2),\n.square span:nth-of-type(2):after {\n  transition-delay: 0.2s;\n}\n\n.square span:nth-of-type(3),\n.square span:nth-of-type(3):after {\n  transition-delay: 0.3s;\n}\n\n</style>"
+  }
+}
+```
+
+## Selected Component Reference
+- Category: Toggle-switches
+- Component: elijahgummer_shy-fireant-5.html
+- Path: C:\Users\User\Documents\GitHub\Axon\x-components\Toggle-switches\elijahgummer_shy-fireant-5.html
+
+Use the selected component HTML below as the primary design reference for the new UI. Keep the structure and styling assumptions in mind while rewriting the requested files.
+```html
+<a href="#" class="square">
+  <div class="burgerwrap">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</a>
+
+<style>
+/* Tags: simple, gradient, switch, glow, modern, hover effect */
+.square {
+  border: 1px solid #5e42a6;
+  height: 26px;
+  width: 26px;
+  display: block;
+  margin: 40px auto;
+  transform: rotate(45deg);
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);
+  -moz-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);
+  -o-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);
+  transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);
+  /* custom */
+}
+
+.square .burgerwrap {
+  height: 18px;
+  width: 21px;
+  transform: rotate(-45deg);
+  padding-left: 2px;
+  padding-top: 8px;
+  -webkit-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);
+  -moz-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);
+  -o-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);
+  transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);
+  /* custom */
+}
+
+.square:hover {
+  transform: rotate(135deg);
+  border: 1px solid #fff;
+  box-shadow: 0 0 2px rgba(255, 255, 255, 0.5), 0 0 5px rgba(255, 255, 255, 0.5),
+    0 0 20px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.5),
+    0 0 40px rgba(255, 255, 255, 0.5), 0 0 50px rgba(255, 255, 255, 0.5),
+    0 0 60px rgba(255, 255, 255, 0.5);
+}
+
+.square:hover .burgerwrap {
+  transform: rotate(-135deg);
+}
+
+.square span {
+  height: 2px;
+  width: 14px;
+  background: linear-gradient(145deg, #5e42a6, #b46be4);
+  display: block;
+  margin-bottom: 2px;
+  -webkit-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);
+  -moz-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);
+  -o-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);
+  transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);
+  /* custom */
+}
+
+.square span:after {
+  content: "";
+  height: 2px;
+  width: 14px;
+  position: absolute;
+  background: #fff;
+  left: -22px;
+  margin-top: -4px;
+  -webkit-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);
+  -moz-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);
+  -o-transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);
+  transition: all 500ms cubic-bezier(0.97, 0, 0.395, 0.995);
+  /* custom */
+}
+
+.square:hover span {
+  margin-left: 26px;
+}
+
+.square:hover span:after {
+  left: 0.2px;
+}
+
+.square span:nth-of-type(1),
+.square span:nth-of-type(1):after {
+  transition-delay: 0.1s;
+}
+
+.square span:nth-of-type(2),
+.square span:nth-of-type(2):after {
+  transition-delay: 0.2s;
+}
+
+.square span:nth-of-type(3),
+.square span:nth-of-type(3):after {
+  transition-delay: 0.3s;
+}
+
+</style>
+```
+
+## Your Task
+Completely redesign the UI by rewriting these three files from scratch:
+- `src/App.tsx`
+- `src/App.css`
+- `src/index.css`
+
+## Rules for App.tsx
+1. Keep ALL existing imports:
+   - `import { useState, useEffect, useRef } from 'react'`
+   - `import reactLogo from './assets/react.svg'`
+   - `import viteLogo from './assets/vite.svg'`
+   - `import heroImg from './assets/hero.png'`
+   - `import './App.css'`
+2. Keep the `CounterNum` component (useRef + useEffect animation)
+3. Keep the counter button with `onClick` / `setCount` handler
+4. Keep the Documentation section (Vite/React links)
+5. Keep the Social section (GitHub/Discord/X/Bluesky links + SVG icons)
+6. Do NOT use CSS custom properties (`--var-name`) in inline `style` attributes — TypeScript will error
+
+## Rules for CSS
+- Apply the palette, typography, layout structure, animation level, and component text from the JSON above
+- Use Google Fonts via `@import` in `index.css`
+- Match the theme mood: sleek, mysterious, sophisticated, calm
+
+## Mandatory Requirements (apply to every build)
+
+### 1. Responsive — Mobile First
+- Design for mobile (320px) first, scale up with `min-width` breakpoints
+- Touch targets minimum 44×44px
+- No horizontal scroll on any screen size
+- Fluid typography: use `clamp()` or responsive units (`rem`, `%`, `vw`)
+- Images and layout must reflow gracefully at 320px, 768px, 1280px
+
+### 2. Footer Copyright
+- The page MUST have a `<footer>` at the bottom
+- Footer text: `© 2026 Microtronic. All rights reserved.`
+- Style the footer to match the theme palette (muted text on surface background)
+
+### 3. SEO Standards
+- `index.html` must have a descriptive `<title>`: `FUTURE VISION — Shadow Glow | Microtronic`
+- Add `<meta name="description">` with the subtitle: `Experience clarity in the dark.`
+- Add `<meta name="keywords">` relevant to the theme
+- Add Open Graph tags: `og:title`, `og:description`, `og:type` (website)
+- All images must have meaningful `alt` attributes
+- Use semantic HTML: `<header>`, `<main>`, `<section>`, `<footer>`, `<nav>` where appropriate
+- Heading hierarchy: one `<h1>` (hero), `<h2>` for sections — no skipping levels
+
+## After saving all files
+1. Update `version` in `package.json` to `1.15.0`
+2. Update `<title>` and meta tags in `index.html` as specified above
+3. Run: `pnpm build`
+4. If build succeeds → write `done` to `scripts/build-done.flag`
+5. If build fails with TypeScript errors → fix them and rebuild
