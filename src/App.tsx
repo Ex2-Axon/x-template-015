@@ -1,205 +1,96 @@
-import { useState, useEffect, useRef } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
-
-/* ── Floating particles ── */
-function Particles() {
-  const colors = ['#00f5ff', '#bf00ff', '#ff006e', '#00ff88', '#ffee00']
-  const particles = Array.from({ length: 30 }, (_, i) => ({
-    id: i,
-    left: `${Math.random() * 100}%`,
-    delay: `${Math.random() * 15}s`,
-    duration: `${8 + Math.random() * 12}s`,
-    color: colors[Math.floor(Math.random() * colors.length)],
-    size: `${1 + Math.random() * 3}px`,
-  }))
-
-  return (
-    <div className="particles" aria-hidden="true">
-      {particles.map((p) => (
-        <span
-          key={p.id}
-          className="particle"
-          style={{
-            left: p.left,
-            bottom: '-10px',
-            animationDelay: p.delay,
-            animationDuration: p.duration,
-            background: p.color,
-            boxShadow: `0 0 6px ${p.color}`,
-            width: p.size,
-            height: p.size,
-          }}
-        />
-      ))}
-    </div>
-  )
-}
-
-/* ── Corner decorations ── */
-function Corners() {
-  return (
-    <>
-      <div className="corner-tl" aria-hidden="true" />
-      <div className="corner-tr" aria-hidden="true" />
-      <div className="corner-bl" aria-hidden="true" />
-      <div className="corner-br" aria-hidden="true" />
-    </>
-  )
-}
-
-/* ── Animated counter number ── */
-function CounterNum({ value }: { value: number }) {
-  const ref = useRef<HTMLSpanElement>(null)
-
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-    el.style.transform = 'scale(1.4)'
-    el.style.color = '#ff006e'
-    el.style.textShadow = '0 0 20px #ff006e'
-    const t = setTimeout(() => {
-      el.style.transform = 'scale(1)'
-      el.style.color = ''
-      el.style.textShadow = ''
-    }, 200)
-    return () => clearTimeout(t)
-  }, [value])
-
-  return (
-    <span
-      ref={ref}
-      className="counter-num"
-      style={{ transition: 'all 0.2s ease' }}
-    >
-      {value}
-    </span>
-  )
-}
+import { useState } from 'react'
+import { BeakerIcon, RocketLaunchIcon, SparklesIcon } from '@heroicons/react/24/outline'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [active, setActive] = useState(false)
 
   return (
-    <>
-      <Particles />
-      <Corners />
+    <div className="min-h-screen relative flex items-center justify-center overflow-hidden bg-grid">
+      {/* Decorative Blur Elements */}
+      <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-cyan-500/10 blur-[120px] rounded-full" />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-fuchsia-500/10 blur-[120px] rounded-full" />
 
-      {/* ── Hero section ── */}
-      <section id="center">
-        <div className="hero-badge animate-in-1">
-          <span className="dot" />
-          SYSTEM ONLINE — VITE + REACT
-        </div>
+      <main className="relative z-10 w-full max-w-4xl px-6">
+        <div className="glass p-8 md:p-12 rounded-3xl space-y-8 animate-float">
+          {/* Header */}
+          <header className="flex items-center justify-between border-b border-white/5 pb-6">
+            <div className="flex items-center gap-3">
+              <div className="p-2 bg-cyan-500/20 rounded-lg">
+                <BeakerIcon className="w-6 h-6 text-cyan-400" />
+              </div>
+              <h1 className="text-xl font-bold tracking-tighter glow-text">AXON_GENESIS</h1>
+            </div>
+            <div className="hidden md:flex gap-6 text-sm font-medium text-slate-400">
+              <a href="#" className="hover:text-cyan-400 transition-colors">VIRTUAL_DATA</a>
+              <a href="#" className="hover:text-cyan-400 transition-colors">NEURAL_LINK</a>
+            </div>
+          </header>
 
-        <div className="hero animate-in-2">
-          <img src={heroImg} className="base" width="160" height="168" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
+          {/* Hero Content */}
+          <div className="grid md:grid-cols-2 gap-12 items-center py-8">
+            <div className="space-y-6 text-center md:text-left">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/50 border border-white/5 text-xs font-mono text-cyan-400">
+                <span className="w-2 h-2 rounded-full bg-cyan-500 animate-pulse" />
+                SYSTEM STATUS: OPTIMAL
+              </div>
+              <h2 className="text-4xl md:text-6xl font-black leading-tight tracking-tight">
+                UPGRADE YOUR <br />
+                <span className="text-cyan-400">REALITY_</span>
+              </h2>
+              <p className="text-slate-400 text-lg leading-relaxed max-w-md mx-auto md:mx-0">
+                Experience the next generation of digital interface design. Built with React 19, Vite, and Tailwind 4.
+              </p>
+              <div className="flex flex-wrap gap-4 justify-center md:justify-start pt-4">
+                <button 
+                  onClick={() => setActive(!active)}
+                  className="btn-cyber flex items-center gap-2"
+                >
+                  <RocketLaunchIcon className="w-5 h-5" />
+                  INITIALIZE_
+                </button>
+                <button className="px-6 py-3 font-bold text-slate-300 hover:text-white transition-colors">
+                  VIEW_DOCS
+                </button>
+              </div>
+            </div>
 
-        <div className="animate-in-3">
-          <h1 className="glitch" data-text="GET STARTED">
-            GET STARTED
-          </h1>
-          <div className="neon-line" />
-        </div>
-
-        <p className="subtitle animate-in-4">
-          Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-        </p>
-
-        <button
-          type="button"
-          className="counter animate-in-5"
-          onClick={() => setCount((c) => c + 1)}
-        >
-          COUNT_
-          <CounterNum value={count} />
-        </button>
-      </section>
-
-      <div className="ticks" />
-
-      {/* ── Next steps ── */}
-      <section id="next-steps">
-        <div id="docs">
-          <div className="section-icon-wrap">
-            <svg className="icon" role="presentation" aria-hidden="true">
-              <use href="/icons.svg#documentation-icon" />
-            </svg>
+            {/* Visual Element */}
+            <div className="relative aspect-square flex items-center justify-center">
+              <div className={`w-64 h-64 rounded-2xl border-2 border-dashed border-cyan-500/30 transition-all duration-700 ${active ? 'rotate-180 scale-110 border-fuchsia-500/50' : ''}`}>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <SparklesIcon className={`w-32 h-32 text-cyan-500/20 transition-all duration-700 ${active ? 'text-fuchsia-500/40 scale-125 rotate-12' : ''}`} />
+                </div>
+              </div>
+              {/* Floating Cards */}
+              <div className="absolute top-4 right-4 p-4 glass rounded-xl animate-float" style={{ animationDelay: '1s' }}>
+                <div className="w-8 h-1 bg-cyan-500 mb-2" />
+                <div className="w-12 h-1 bg-slate-700" />
+              </div>
+              <div className="absolute bottom-10 left-4 p-4 glass rounded-xl animate-float" style={{ animationDelay: '2s' }}>
+                <div className="w-12 h-1 bg-fuchsia-500 mb-2" />
+                <div className="w-8 h-1 bg-slate-700" />
+              </div>
+            </div>
           </div>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank" rel="noreferrer">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank" rel="noreferrer">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn More
-              </a>
-            </li>
-          </ul>
+
+          {/* Footer Stats */}
+          <footer className="grid grid-cols-3 gap-4 pt-8 border-t border-white/5">
+            <div className="text-center md:text-left">
+              <div className="text-2xl font-bold text-white">1.2ms</div>
+              <div className="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Latency</div>
+            </div>
+            <div className="text-center md:text-left">
+              <div className="text-2xl font-bold text-white">99.9%</div>
+              <div className="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Uptime</div>
+            </div>
+            <div className="text-center md:text-left">
+              <div className="text-2xl font-bold text-white">4.0.0</div>
+              <div className="text-[10px] font-mono text-slate-500 uppercase tracking-widest">Version</div>
+            </div>
+          </footer>
         </div>
-
-        <div id="social">
-          <div className="section-icon-wrap">
-            <svg className="icon" role="presentation" aria-hidden="true">
-              <use href="/icons.svg#social-icon" />
-            </svg>
-          </div>
-          <h2>Connect With Us</h2>
-          <p>Join the Vite X-Template Community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/Ex2-Axon/x-template" target="_blank" rel="noreferrer">
-                <svg className="button-icon" role="presentation" aria-hidden="true">
-                  <use href="/icons.svg#github-icon" />
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://discord.gg/8Zeq8VCU" target="_blank" rel="noreferrer">
-                <svg className="button-icon" role="presentation" aria-hidden="true">
-                  <use href="/icons.svg#discord-icon" />
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/Microtronic2" target="_blank" rel="noreferrer">
-                <svg className="button-icon" role="presentation" aria-hidden="true">
-                  <use href="/icons.svg#x-icon" />
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/microtronic.bsky.social" target="_blank" rel="noreferrer">
-                <svg className="button-icon" role="presentation" aria-hidden="true">
-                  <use href="/icons.svg#bluesky-icon" />
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks" />
-
-      <section id="spacer">
-        <span className="footer-text">// SYSTEM v1.0.0 — READY</span>
-      </section>
-    </>
+      </main>
+    </div>
   )
 }
 
